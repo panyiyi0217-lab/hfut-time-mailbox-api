@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: hfut-time-mailbox-api
+    env: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SITE_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SMTP_HOST
+        value: smtp.qq.com
+      - key: SMTP_PORT
+        value: 465
+      - key: SMTP_SECURE
+        value: true
+      - key: SMTP_USER
+        value: 2953937202@qq.com
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        value: HFUT 时间信箱 <2953937202@qq.com>
+      - key: SEND_INTERVAL_MS
+        value: 60000
+      - key: MAX_SEND_ATTEMPTS
+        value: 5
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 3600000
+      - key: RATE_LIMIT_MAX_LETTERS
+        value: 5
