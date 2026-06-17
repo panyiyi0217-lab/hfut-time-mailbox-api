@@ -1,0 +1,16 @@
+{
+  "name": "hfut-time-mailbox",
+  "version": "1.0.0",
+  "description": "合肥工业大学同学的未来时间信箱网站",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.5",
+    "pg": "^8.21.0"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
